@@ -1,3 +1,4 @@
+//@flow
 import React from 'react';
 import {makeStyles} from '@material-ui/core/styles';
 import Card from '@material-ui/core/Card';
@@ -20,6 +21,9 @@ const useStyles = makeStyles({
 const ListaUsuarios = () => {
 
     const classes = useStyles();
+
+    let card = '';
+
 
     return (
         <Grid container
