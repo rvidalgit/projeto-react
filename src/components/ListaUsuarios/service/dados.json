@@ -1,0 +1,44 @@
+[
+  {
+    "id": 1,
+    "nome": "Claudio Cury",
+    "cargo": "Adm. de Redes",
+    "email": "claudio.cury@nossaempresa.com.br",
+    "image": "http://localhost:3000/images/avatar-1.png"
+  },
+  {
+    "id": 2,
+    "nome": "Gabriel de Jesus",
+    "cargo": "Atendente de Suporte",
+    "email": "gabriel.jesus@nossaempresa.com.br",
+    "image": "http://localhost:3000/images/avatar-2.png"
+  },
+  {
+    "id": 3,
+    "nome": "Camila Costa",
+    "cargo": "Secretária",
+    "email": "camila.costa@nossaempresa.com.br",
+    "image": "http://localhost:3000/images/avatar-3.png"
+  },
+  {
+    "id": 4,
+    "nome": "Ana Cláudia",
+    "cargo": "Product Owner",
+    "email": "ana.claudia@nossaempresa.com.br",
+    "image": "http://localhost:3000/images/avatar-4.png"
+  },
+  {
+    "id": 5,
+    "nome": "Maria Clara",
+    "cargo": "Scrum Master",
+    "email": "maria.clara@nossaempresa.com.br",
+    "image": "http://localhost:3000/images/avatar-5.png"
+  },
+  {
+    "id": 6,
+    "nome": "Júlio Guilherme",
+    "cargo": "Programador Sênior",
+    "email": "julio.guilherme@nossaempresa.com.br",
+    "image": "http://localhost:3000/images/avatar-6.png"
+  }
+]
