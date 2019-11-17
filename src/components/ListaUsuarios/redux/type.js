@@ -1,0 +1,5 @@
+//@flow
+const MODULE_NAME = "ListaUsuarios.";
+
+export const CARREGA_USUARIOS = `${MODULE_NAME}CARREGA_USUARIOS`;
+export const LISTA_USUARIOS = `${MODULE_NAME}LISTA_USUARIOS`;

@@ -1,9 +1,9 @@
 [ignore]
-
+.*/public/*
 [include]
 
 [libs]
-
+./*node_modules/*
 [lints]
 
 [options]

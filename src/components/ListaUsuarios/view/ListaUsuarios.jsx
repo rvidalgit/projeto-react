@@ -9,6 +9,15 @@ import Typography from '@material-ui/core/Typography';
 import Grid from '@material-ui/core/Grid';
 import Box from '@material-ui/core/Box';
 import ListaUsuariosService from "../service/ListaUsuariosService";
+import type {Store} from "../../../shared/flowTypes/flowTypes";
+import {connect} from "react-redux";
+import type {InitialStateListaUsuarios} from "../redux/listaUsuariosReducer";
+import {carregaLista} from "../redux/action";
+
+type Props = {
+    stateLista: InitialStateListaUsuarios,
+    carregaLista: () => void,
+};
 
 const useStyles = makeStyles({
     card: {
@@ -19,7 +28,9 @@ const useStyles = makeStyles({
     },
 });
 
-const ListaUsuarios = () => {
+const ListaUsuarios = (props: Props) => {
+
+    const {carregaLista} = props;
 
     const classes = useStyles();
     const [data, setData] = useState([]);
@@ -28,6 +39,10 @@ const ListaUsuarios = () => {
         const service = new ListaUsuariosService();
         service.getListaUsuarios().then(data => setData(data));
     }, []);
+
+    useEffect(() => {
+        carregaLista();
+    }, [carregaLista]);
 
     return (
         <Box p={3}>
@@ -38,8 +53,6 @@ const ListaUsuarios = () => {
                   spacing={1}>
 
                 {data.map(user => {
-                    console.log(user);
-
                     return (<Grid key={user.id} item xs={12} sm={4}>
                         <Card className={classes.card}>
                             <CardActionArea>
@@ -64,10 +77,21 @@ const ListaUsuarios = () => {
                     </Grid>)
                 })}
 
-
             </Grid>
         </Box>
     );
 };
 
-export default ListaUsuarios;
+const mapStateToProps = (state: Store) => {
+    return {
+        stateLista: state.LISTA_USUARIO,
+    }
+};
+
+const mapDispatchToProps = (dispatch) => {
+    return {
+        carregaLista: () => dispatch(carregaLista()),
+    }
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(ListaUsuarios);
