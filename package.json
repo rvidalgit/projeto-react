@@ -19,7 +19,7 @@
     "build": "react-scripts build",
     "predeploy": "yarn run build",
     "deploy": "gh-pages -d build",
-    "test": "react-scripts test",
+    "test": "jest",
     "flow": "flow",
     "eject": "react-scripts eject"
   },
@@ -39,6 +39,10 @@
     ]
   },
   "devDependencies": {
-    "flow-bin": "^0.112.0"
+    "faker": "^4.1.0",
+    "flow-bin": "^0.112.0",
+    "jest": "^24.9.0",
+    "jest-cli": "^24.9.0",
+    "puppeteer": "^2.0.0"
   }
 }
