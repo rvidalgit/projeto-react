@@ -1,5 +1,5 @@
 //@flow
-import React, {useEffect, useState} from 'react';
+import React, {useEffect} from 'react';
 import {makeStyles} from '@material-ui/core/styles';
 import Card from '@material-ui/core/Card';
 import CardActionArea from '@material-ui/core/CardActionArea';
@@ -8,7 +8,6 @@ import CardMedia from '@material-ui/core/CardMedia';
 import Typography from '@material-ui/core/Typography';
 import Grid from '@material-ui/core/Grid';
 import Box from '@material-ui/core/Box';
-import ListaUsuariosService from "../service/ListaUsuariosService";
 import type {Store} from "../../../shared/flowTypes/flowTypes";
 import {connect} from "react-redux";
 import type {InitialStateListaUsuarios} from "../redux/listaUsuariosReducer";
@@ -30,15 +29,9 @@ const useStyles = makeStyles({
 
 const ListaUsuarios = (props: Props) => {
 
-    const {carregaLista} = props;
+    const {carregaLista, stateLista} = props;
 
     const classes = useStyles();
-    const [data, setData] = useState([]);
-
-    useEffect(() => {
-        const service = new ListaUsuariosService();
-        service.getListaUsuarios().then(data => setData(data));
-    }, []);
 
     useEffect(() => {
         carregaLista();
@@ -52,7 +45,7 @@ const ListaUsuarios = (props: Props) => {
                   alignItems="center"
                   spacing={1}>
 
-                {data.map(user => {
+                {stateLista.lista.map(user => {
                     return (<Grid key={user.id} item xs={12} sm={4}>
                         <Card className={classes.card}>
                             <CardActionArea>
