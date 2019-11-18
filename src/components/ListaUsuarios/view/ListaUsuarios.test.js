@@ -1,6 +1,4 @@
 const puppeteer = require('puppeteer');
-import * as Actions from '../components/ListaUsuarios/redux/action';
-import * as Types from '../components/ListaUsuarios/redux/type';
 
 const now = new Date;
 const name = now.getFullYear().toString() + '-' + now.getMonth().toString() + '-' + now.getDate().toString();
@@ -48,7 +46,7 @@ describe('Screenshot do mobile', () => {
 
         await page.screenshot(
             {
-                path: `./src/test/${name}-mobile-listaUsuarios.png`,
+                path: `./src/test_capture/${name}-mobile-listaUsuarios.png`,
                 fullPage: true
             }
         );
@@ -73,68 +71,11 @@ describe('Gera PDF', () => {
 
         await page.goto('http://localhost:3000/', {waitUntil: 'networkidle2'});
         await page.pdf({
-            path: `./src/test/${name}-web-listaUsuarios.pdf`,
+            path: `./src/test_capture/${name}-web-listaUsuarios.pdf`,
             format: 'A3',
             printBackground: true,
             headerTemplate: '<h1>teste</h1>'
         });
         browser.close();
-    }, 16000);
-});
-
-describe('Carrega action', () => {
-
-    it('Verifica o type da action', () => {
-        const expectedAction = {
-            type: Types.CARREGA_USUARIOS
-        };
-
-        expect(Actions.carregaLista()).toEqual(expectedAction);
-
-    }, 16000);
-
-    it('Verifica o type da action', () => {
-        const expectedAction = {
-            type: Types.LISTA_USUARIOS,
-            payload: {}
-        };
-
-        expect(Actions.listaUsuarios()).toEqual(expectedAction);
-
-    }, 16000);
-
-
-    it('Verifica carregamento da lista', () => {
-        const expectedAction = {
-            type: Types.LISTA_USUARIOS,
-            payload: {
-                lista:
-                    [{
-                        "id": 7,
-                        "name": "Rodrigo Vidal",
-                        "role": "Programador",
-                        "genre": "M",
-                        "email": "rvidal@nossaempresa.com.br",
-                        "image": "images/image-not-found.png"
-                    }]
-            }
-        };
-
-        expect(Actions.listaUsuarios([{
-            "id": 7,
-            "name": "Rodrigo Vidal",
-            "role": "Programador",
-            "genre": "M",
-            "email": "rvidal@nossaempresa.com.br",
-            "image": "images/image-not-found.png"
-        }])).toEqual(expectedAction);
-
-        expect(expectedAction.payload.lista[0].id).toEqual(7);
-        expect(expectedAction.payload.lista[0].name).toEqual("Rodrigo Vidal");
-        expect(expectedAction.payload.lista[0].role).toEqual("Programador");
-        expect(expectedAction.payload.lista[0].genre).toEqual("M");
-        expect(expectedAction.payload.lista[0].email).toEqual("rvidal@nossaempresa.com.br");
-        expect(expectedAction.payload.lista[0].image).toEqual("images/image-not-found.png");
-
     }, 16000);
 });

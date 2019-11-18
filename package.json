@@ -21,7 +21,8 @@
     "deploy": "gh-pages -d build",
     "test": "CI=true react-scripts test",
     "flow": "flow",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "jest": "CI=true react-scripts test"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -39,7 +40,6 @@
     ]
   },
   "devDependencies": {
-    "faker": "^4.1.0",
     "flow-bin": "^0.112.0",
     "jest": "^24.9.0",
     "jest-cli": "^24.9.0",
