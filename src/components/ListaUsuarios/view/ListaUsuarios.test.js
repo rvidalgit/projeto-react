@@ -16,7 +16,7 @@ describe('Testa carregamento da página', () => {
             userAgent: ''
         });
 
-        await page.goto('http://localhost:3000/');
+        await page.goto('http://localhost:3000/',{ waitUntil: 'networkidle0' });
 
         const muiGridItem  = await page.$eval('.MuiGrid-item ', el => !!el);
         const listItems = await page.$$('.MuiGrid-item');
