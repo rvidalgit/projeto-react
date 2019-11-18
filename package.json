@@ -19,7 +19,7 @@
     "build": "react-scripts build",
     "predeploy": "yarn run build",
     "deploy": "gh-pages -d build",
-    "test": "jest",
+    "test": "CI=true react-scripts test",
     "flow": "flow",
     "eject": "react-scripts eject"
   },
