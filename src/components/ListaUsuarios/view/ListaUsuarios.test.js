@@ -4,7 +4,7 @@ const now = new Date;
 const name = now.getFullYear().toString() + '-' + now.getMonth().toString() + '-' + now.getDate().toString();
 
 describe('Testa carregamento da página', () => {
-    test('Teste da exibição dos elementos', async () => {
+    test('Teste da exibição dos elementos e nº de elementos', async () => {
         let browser = await puppeteer.launch({
             headless: false
         });
