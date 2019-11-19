@@ -24,7 +24,11 @@ const useStyles = makeStyles({
     },
     media: {
         height: 140,
+        cursor: 'default'
     },
+    content: {
+        cursor: 'default'
+    }
 });
 
 const ListaUsuarios = (props: Props) => {
@@ -52,17 +56,17 @@ const ListaUsuarios = (props: Props) => {
                                 <CardMedia
                                     className={classes.media}
                                     title={user.genre === 'M' ? `Foto do ${user.name} ` : `Foto da ${user.name}`}
-                                    image={user.image}
+                                    image={user.image ? user.image : 'images/image-not-found.png'}
                                 />
-                                <CardContent>
+                                <CardContent className={classes.content}>
                                     <Typography gutterBottom variant="h5" component="h2">
-                                        {user.name}
+                                        {user.name ? user.name : "Nome não informado"}
                                     </Typography>
                                     <Typography variant="body2" color="textSecondary" component="p">
-                                        {user.role}
+                                        {user.role ? user.role : "Cargo não informado"}
                                     </Typography>
                                     <Typography variant="body2" color="textSecondary" component="p">
-                                        {user.email}
+                                        {user.email ? user.email : "E-mail não informado"}
                                     </Typography>
                                 </CardContent>
                             </CardActionArea>
