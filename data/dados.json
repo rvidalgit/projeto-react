@@ -1,0 +1,50 @@
+[
+  {
+    "id": 1,
+    "name": "Claudio Cury",
+    "role": "Adm. de Redes",
+    "genre": "M",
+    "email": "claudio.cury@nossaempresa.com.br",
+    "image": "images/avatar-1.png"
+  },
+  {
+    "id": 2,
+    "name": "Gabriel de Jesus",
+    "role": "Atendente de Suporte",
+    "genre": "M",
+    "email": "gabriel.jesus@nossaempresa.com.br",
+    "image": "images/avatar-2.png"
+  },
+  {
+    "id": 3,
+    "name": "Camila Costa",
+    "role": "Secretária",
+    "genre": "F",
+    "email": "camila.costa@nossaempresa.com.br",
+    "image": "images/avatar-3.png"
+  },
+  {
+    "id": 4,
+    "name": "Ana Cláudia",
+    "role": "Product Owner",
+    "genre": "F",
+    "email": "ana.claudia@nossaempresa.com.br",
+    "image": "images/avatar-4.png"
+  },
+  {
+    "id": 5,
+    "name": "Maria Clara",
+    "role": "Scrum Master",
+    "genre": "F",
+    "email": "maria.clara@nossaempresa.com.br",
+    "image": "images/avatar-5.png"
+  },
+  {
+    "id": 6,
+    "name": "Júlio Guilherme",
+    "role": "Programador Sênior",
+    "genre": "M",
+    "email": "julio.guilherme@nossaempresa.com.br",
+    "image": "images/avatar-6.png"
+  }
+]
