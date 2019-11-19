@@ -11,7 +11,7 @@ module.exports = {
   // Respect "browser" field in package.json when resolving modules
   // browser: false,
 
-  // The directory where Jest should store its cached dependency information
+  // The directory where Jest should saga its cached dependency information
   // cacheDirectory: "/tmp/jest_rs",
 
   // Automatically clear mock calls and instances between every test
